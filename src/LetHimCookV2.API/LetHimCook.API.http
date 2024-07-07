@@ -5,7 +5,7 @@ POST{{url}}/users
 Content-Type: application/json
 
 {
-  "email": "user1@lethimcook.io",
+  "email": "user1@lethimcook2.io",
   "username": "groka",
   "password": "secret",
   "fullName": "Kamil Groka",
