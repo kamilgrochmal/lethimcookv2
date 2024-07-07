@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LetHimCookV2.API.Infrastructure.DAL;
 
-public sealed class LetHimCookDbContext : DbContext
+public sealed class LetHimCookV2DbContext : DbContext
 {
-    public LetHimCookDbContext(DbContextOptions<LetHimCookDbContext> options) : base(options)
+    public LetHimCookV2DbContext(DbContextOptions<LetHimCookV2DbContext> options) : base(options)
     {
         
     }

@@ -33,15 +33,15 @@ public interface ICatalogsService
 
 public class CatalogsService : ICatalogsService
 {
-    private readonly LetHimCookDbContext _dbContext;
+    private readonly LetHimCookV2DbContext _v2DbContext;
 
-    public CatalogsService(LetHimCookDbContext dbContext)
+    public CatalogsService(LetHimCookV2DbContext v2DbContext)
     {
-        _dbContext = dbContext;
+        _v2DbContext = v2DbContext;
     }
     public async Task<List<CatalogDto>> BrowseAsync()
     {
-        return await _dbContext
+        return await _v2DbContext
             .Catalogs
             .Select(a => new CatalogDto(a.CatalogId.Id, a.Title, a.Description))
             .AsNoTracking()

@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace LetHimCookV2.API.Infrastructure.DAL.Migrations
 {
-    [DbContext(typeof(LetHimCookDbContext))]
+    [DbContext(typeof(LetHimCookV2DbContext))]
     [Migration("20240705134734_third migration")]
     partial class thirdmigration
     {

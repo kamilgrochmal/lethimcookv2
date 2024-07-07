@@ -1,6 +1,7 @@
 ﻿using LetHimCookV2.API.Application.DTO;
 using LetHimCookV2.API.Application.Requests;
 using LetHimCookV2.API.Application.Security;
+using LetHimCookV2.API.Domain.Abstractions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -50,7 +51,7 @@ public class UsersController : BaseController
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [SwaggerOperation("Authenticates user")]
-    public async Task<ActionResult<JwtDto>> Post(SignIn signIn)
+    public async Task<ActionResult<JsonWebToken>> Post(SignIn signIn)
     {
         return Ok(await _identityService.SignInAsync(signIn));
     }

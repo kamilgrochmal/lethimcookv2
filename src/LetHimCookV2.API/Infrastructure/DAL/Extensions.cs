@@ -13,7 +13,7 @@ internal static class Extensions
     {
         services.Configure<PostgresOptions>(configuration.GetRequiredSection(OptionsSectionName));
         var postgresOptions = configuration.GetOptions<PostgresOptions>(OptionsSectionName);
-        services.AddDbContext<LetHimCookDbContext>(x => x.UseNpgsql(postgresOptions.ConnectionString));
+        services.AddDbContext<LetHimCookV2DbContext>(x => x.UseNpgsql(postgresOptions.ConnectionString));
         services.AddHostedService<DatabaseInitializer>();
 
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);

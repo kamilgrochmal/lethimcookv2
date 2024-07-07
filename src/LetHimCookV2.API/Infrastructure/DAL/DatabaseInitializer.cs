@@ -16,7 +16,7 @@ internal sealed class DatabaseInitializer : IHostedService
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         using var scope = _serviceProvider.CreateScope();
-        var dbContext = scope.ServiceProvider.GetRequiredService<LetHimCookDbContext>();
+        var dbContext = scope.ServiceProvider.GetRequiredService<LetHimCookV2DbContext>();
         await dbContext.Database.MigrateAsync(cancellationToken);
 
         if (!await dbContext.Catalogs.AnyAsync(cancellationToken: cancellationToken))

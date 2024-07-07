@@ -1,7 +1,8 @@
-using System.Reflection;
+using System.Runtime.CompilerServices;
 using LetHimCookV2.API.Infrastructure;
 using LetHimCookV2.API.Infrastructure.Exceptions;
 using Microsoft.OpenApi.Models;
+[assembly: InternalsVisibleTo("LetHimCookV2.API.Tests")]
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -7,13 +7,13 @@ namespace LetHimCookV2.API.Infrastructure.Repositories;
 
 internal sealed class PostgresUserRepository : IUserRepository
 {
-    private readonly LetHimCookDbContext _dbContext;
+    private readonly LetHimCookV2DbContext _v2DbContext;
     private readonly DbSet<User> _users;
 
-    public PostgresUserRepository(LetHimCookDbContext dbContext)
+    public PostgresUserRepository(LetHimCookV2DbContext v2DbContext)
     {
-        _dbContext = dbContext;
-        _users = dbContext.Users;
+        _v2DbContext = v2DbContext;
+        _users = v2DbContext.Users;
     }
 
     public Task<User> GetByIdAsync(UserId id)
@@ -27,7 +27,7 @@ internal sealed class PostgresUserRepository : IUserRepository
 
     public async Task AddAsync(User user)
     {
-        await _dbContext.Users.AddAsync(user);
-        await _dbContext.SaveChangesAsync();
+        await _v2DbContext.Users.AddAsync(user);
+        await _v2DbContext.SaveChangesAsync();
     }
 }

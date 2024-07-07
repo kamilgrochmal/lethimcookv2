@@ -9,28 +9,28 @@ namespace LetHimCookV2.API.Infrastructure.Repositories;
 
 internal sealed class DocumentRepository : IDocumentRepository
 {
-    private readonly LetHimCookDbContext _dbContext;
+    private readonly LetHimCookV2DbContext _v2DbContext;
 
-    public DocumentRepository(LetHimCookDbContext dbContext)
+    public DocumentRepository(LetHimCookV2DbContext v2DbContext)
     {
-        _dbContext = dbContext;
+        _v2DbContext = v2DbContext;
     }
 
     public async Task UploadDocument(Document document)
     {
-        await _dbContext.AddAsync(document);
-        await _dbContext.SaveChangesAsync();
+        await _v2DbContext.AddAsync(document);
+        await _v2DbContext.SaveChangesAsync();
     }
 
     public async Task<Document> GetDocument(DocumentId documentId, PatientId patientId)
     {
-        return await _dbContext.Documents.SingleOrDefaultAsync(a => a.DocumentId == documentId)!;
+        return await _v2DbContext.Documents.SingleOrDefaultAsync(a => a.DocumentId == documentId)!;
     }
 
     public async Task<IEnumerable<Document>> GetDocuments(DateTime? from, DateTime? to,
         long? catalogId, PatientId patientId)
     {
-        var documents = _dbContext.Documents.Where(a => a.PatientId == patientId);
+        var documents = _v2DbContext.Documents.Where(a => a.PatientId == patientId);
 
         if (catalogId is not null)
         {

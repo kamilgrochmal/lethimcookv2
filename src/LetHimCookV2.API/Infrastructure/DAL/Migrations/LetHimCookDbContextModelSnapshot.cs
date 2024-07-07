@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace LetHimCookV2.API.Infrastructure.DAL.Migrations
 {
-    [DbContext(typeof(LetHimCookDbContext))]
+    [DbContext(typeof(LetHimCookV2DbContext))]
     partial class LetHimCookDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
