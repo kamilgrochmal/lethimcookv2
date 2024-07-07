@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E0903016-E31E-4CB2-B89E-92E034A5D1A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LetHimCookV2.API", "src\LetHimCookV2.API\LetHimCookV2.API.csproj", "{DF21A6AA-5F91-4862-A57B-BF8F0E3CC66B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EEDE590C-0315-43D7-B3FE-3F16B8B67FF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LetHimCookV2.API.Tests", "tests\LetHimCookV2.API.Tests\LetHimCookV2.API.Tests.csproj", "{63DA64EE-296C-4446-ABCD-820F4B975E03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DF21A6AA-5F91-4862-A57B-BF8F0E3CC66B} = {E0903016-E31E-4CB2-B89E-92E034A5D1A0}
+		{63DA64EE-296C-4446-ABCD-820F4B975E03} = {EEDE590C-0315-43D7-B3FE-3F16B8B67FF8}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF21A6AA-5F91-4862-A57B-BF8F0E3CC66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF21A6AA-5F91-4862-A57B-BF8F0E3CC66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF21A6AA-5F91-4862-A57B-BF8F0E3CC66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF21A6AA-5F91-4862-A57B-BF8F0E3CC66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DA64EE-296C-4446-ABCD-820F4B975E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DA64EE-296C-4446-ABCD-820F4B975E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DA64EE-296C-4446-ABCD-820F4B975E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DA64EE-296C-4446-ABCD-820F4B975E03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

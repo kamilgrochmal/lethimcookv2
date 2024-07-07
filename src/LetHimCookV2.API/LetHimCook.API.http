@@ -1,0 +1,90 @@
+@url = https://localhost:7193
+
+###
+POST{{url}}/users
+Content-Type: application/json
+
+{
+  "email": "user1@lethimcook.io",
+  "username": "groka",
+  "password": "secret",
+  "fullName": "Kamil Groka",
+  "role": "user",
+  "firstName": "Kamil",
+  "lastName": "Groka",
+  "dateOfBirth": "1990-01-01",
+  "phoneNumber": "1234567890"
+}
+
+###
+# @name sign_in
+POST {{url}}/users/sign-in
+Content-Type: application/json
+
+{
+  "email": "user1@lethimcook.io",
+  "password": "secret"
+}
+
+### 
+# Tutaj trzeba podmienić na token z wyżej.
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiIxIiwianRpIjoiNzgzNDc0ZWEtMmEwZi00ODY4LWIxOTYtMWY5MmY2ZDAxNzNkIiwiaWF0IjoiMTcyMDM0ODkxNzY4NCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InVzZXIiLCJuYmYiOjE3MjAzNDg5MTcsImV4cCI6MTcyMDM1MjUxNywiaXNzIjoibGV0aGltY29vayJ9.uxj1xhhvis1B-_DTkjH_plvNwNqqThbA-tQvRbGQCzM
+###
+# Get User Details
+GET {{url}}/users/me
+Authorization: Bearer {{accessToken}}
+
+
+###
+# Upload Document
+POST {{url}}/Documents
+Authorization: Bearer {{accessToken}}
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="File"; filename="file.pdf"
+Content-Type: application/pdf
+
+< ./Struktura_pracy.pdf
+
+--boundary123
+Content-Disposition: form-data; name="Title"
+
+Moja struktura
+
+--boundary123
+Content-Disposition: form-data; name="Description"
+
+No wtedy bylo tak
+
+--boundary123
+Content-Disposition: form-data; name="CatalogId"
+
+2
+
+--boundary123
+Content-Disposition: form-data; name="DocumentDate"
+
+2022-07-07
+
+
+
+###
+GET {{url}}/Documents/1/details
+Authorization: Bearer {{accessToken}}
+
+###
+GET {{url}}/Documents
+Authorization: Bearer {{accessToken}}
+
+###
+GET {{url}}/Documents?catalogId=2
+Authorization: Bearer {{accessToken}}
+
+###
+GET {{url}}/Documents?from=2022-01-01&to=2023-1-31
+Authorization: Bearer {{accessToken}}
+
+###
+GET {{url}}/Documents/1
+Authorization: Bearer {{accessToken}}
